@@ -1,0 +1,110 @@
+.datepicker,
+.datetimepicker {
+    width: 260px;
+    padding: 5px;
+    border-radius: 0.3rem;
+
+    table {
+        width: 100%;
+    }
+
+    th,
+    td {
+        width: 35px;
+        height: 35px;
+        border-radius: 3px;
+        font-weight: normal;
+    }
+
+    th.switch {
+        width: auto;
+    }
+
+    .prev,
+    .next {
+        font-size: 0;
+        color: transparent;
+
+        span {
+            display: none;
+        }
+
+        &::before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-style: normal;
+            font-variant: normal;
+            font-size: 0.9rem;
+            line-height: 1;
+            text-rendering: auto;
+            color: #212529;
+        }
+    }
+
+    .prev::before {
+        content: "\f104";
+    }
+
+    .next::before {
+        content: "\f105";
+    }
+}
+
+.bootstrap-timepicker-widget {
+    padding: 5px;
+    border-radius: 0.3rem;
+
+    [data-action] {
+        border: none;
+
+        span {
+            display: none;
+        }
+
+        &::before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-style: normal;
+            font-variant: normal;
+            font-size: 0.9rem;
+            line-height: 1;
+            text-rendering: auto;
+            color: #212529;
+        }
+    }
+
+    tr:first-child [data-action] {
+        &::before {
+            content: "\f106";
+        }
+    }
+
+    tr:last-child [data-action] {
+        &::before {
+            content: "\f107";
+        }
+    }
+
+    table td input {
+        display: block;
+        width: 35px;
+        height: calc(1.6em + 0.75rem + 2px);
+        margin: 0 auto;
+        font-size: 0.9rem;
+        font-weight: 400;
+        line-height: 1.6;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+        &:focus {
+            color: #495057;
+            background-color: #fff;
+            border-color: #80bdff;
+            outline: 0;
+        }
+    }
+}

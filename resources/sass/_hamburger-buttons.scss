@@ -1,0 +1,177 @@
+/**
+ * Hamburger buttons
+ *
+ *
+ * Style 1
+ *
+ * Hamburger to "x" (htx). Takes on a hamburger shape, bars slide
+ * down to center and transform into an "x".
+ *
+ *
+ * Style 2
+ *
+ * Hamburger to left-arrow (htla). Hamburger menu transforms to a left-pointing
+ * arrow. Usually indicates an off canvas menu sliding in from left that
+ * will be close on re-click of the icon.
+ *
+ *
+ * Style 3
+ *
+ * Hamburger to right-arrow (htra). Hamburger menu transforms to a
+ * right-pointing arrow. Usually indicates an off canvas menu sliding in from
+ * right that will be close on re-click of the icon.
+ */
+[class*=button_hamburger] {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    text-indent: -9999px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+[class*=button_hamburger]:focus {
+    outline: none;
+}
+
+[class*=button_hamburger] span {
+    display: block;
+    height: 2px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    margin: auto;
+    background-color: #fff;
+}
+
+[class*=button_hamburger] span::before,
+[class*=button_hamburger] span::after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-color: #fff;
+}
+
+[class*=button_hamburger] span::before {
+    top: -8px;
+}
+
+[class*=button_hamburger] span::after {
+    bottom: -8px;
+}
+
+.button_hamburger_htx span::before,
+.button_hamburger_htx span::after,
+.button_hamburger_htla span::before,
+.button_hamburger_htla span::after {
+    right: 0;
+}
+
+.button_hamburger_htla span::before {
+    transform-origin: top right;
+}
+
+.button_hamburger_htla span::after {
+    transform-origin: bottom right;
+}
+
+.button_hamburger_htra span::before,
+.button_hamburger_htra span::after {
+    left: 0;
+}
+
+.button_hamburger_htra span::before {
+    transform-origin: top left;
+}
+
+.button_hamburger_htra span::after {
+    transform-origin: bottom left;
+}
+
+.button_hamburger_htx,
+.button_hamburger_htla,
+.button_hamburger_htra {
+    background-color: #32dc64;
+}
+
+.button_hamburger_htx span,
+.button_hamburger_htla span,
+.button_hamburger_htra span {
+    transition: transform 0.3s, background 0.3s;
+}
+
+.button_hamburger_htx span::before,
+.button_hamburger_htla span::before,
+.button_hamburger_htra span::before {
+    transition: transform 0.3s, width 0.3s, top 0.3s;
+}
+
+.button_hamburger_htx span::after,
+.button_hamburger_htla span::after,
+.button_hamburger_htra span::after {
+    transition: transform 0.3s, width 0.3s, bottom 0.3s;
+}
+
+.button_hamburger_htx.active,
+.button_hamburger_htla.active,
+.button_hamburger_htra.active {
+    background-color: #18903c;
+}
+
+.button_hamburger_htx.active span::before,
+.button_hamburger_htla.active span::before,
+.button_hamburger_htra.active span::before {
+    top: 0;
+}
+
+.button_hamburger_htx.active span::after,
+.button_hamburger_htla.active span::after,
+.button_hamburger_htra.active span::after {
+    bottom: 0;
+}
+
+.button_hamburger_htx.active span::before,
+.button_hamburger_htla.active span::before,
+.button_hamburger_htra.active span::after {
+    transform: rotate(45deg);
+}
+
+.button_hamburger_htx.active span::after,
+.button_hamburger_htla.active span::after,
+.button_hamburger_htra.active span::before {
+    transform: rotate(-45deg);
+}
+
+.button_hamburger_htx.active span {
+    background: none;
+}
+
+.button_hamburger_htla.active span::before,
+.button_hamburger_htla.active span::after,
+.button_hamburger_htra.active span::before,
+.button_hamburger_htra.active span::after {
+    width: 50%;
+}
+
+.button_hamburger_htla.active span {
+    transform: rotate(-180deg);
+}
+
+.button_hamburger_htra.active span {
+    transform: rotate(180deg);
+}
